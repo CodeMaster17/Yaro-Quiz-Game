@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 12, 20, 1);
+}
+
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding-left: 2%;
+}
+
+.backBtn {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.scoreContainer {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2% 0 2%;
+}
+
+.coins {
+    width: 3.4rem;
+    height: 2.3rem;
+}
+
+.score {
+    font-size: 2.2rem;
+    color: rgba(255, 250, 242, 1);
+    font-family: 'Broadway', sans-serif;
+}
+
+.logoContainer {
+    width: 100%;
+    height: 11.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logoContainer p {
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.lineContainer {
+    margin-top: 4%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.line {
+    width: 80%;
+}
+
+.contentContainer {
+    width: 100%;
+    height: 60vh;
+}
+
+.numberContianer {
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Quantitiy {
+    color: white;
+    font-size: 1.5rem;
+    ;
+}
+
+.number {
+    color: rgba(255, 193, 0, 1);
+    font-size: 1.5rem;
+
+}
+
+.questionContainer {
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.question {
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: Satoshi;
+}
+
+.optionContainer {
+    width: 100%;
+    height: 70%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.answerContainer {
+    border: 2px solid white;
+    width: 15.5rem;
+    height: 14.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2% 0 2% 0;
+}
+
+.answerContainer p {
+    /* color: white; */
+}
+
+.topAnswer {
+    border: 2px solid yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgName {
+    font-size: 1.5rem;
+    font-family: Satoshi;
+    color: white;
+}
+
+.rate {
+    font-size: 1.6rem;
+    text-align: center;
+    color: rgba(255, 193, 0, 1);
+    font-family: Satoshi;
+    font-family: 700;
+}
+
+.bottomLine {
+    font-family: 'Satoshi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.imgOptContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.optImg {
+    width: 7.4rem;
+    height: 3.9rem;
+
+}
+
+.rate {}
+
+.answers {
+    color: white;
+    font-family: Satoshi;
+}
+
+
+.footer {
+    height: 10vh;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.instruction1 {
+    color: white;
+    font-size: 1.2rem;
+    ;
+}
+
+.spanCorrect {
+    color: rgba(255, 193, 0, 1);
+    font-size: 1.2rem;
+    font-family: Satoshi;
+}
+
+.instruction2 {
+    color: white;
+    font-size: 1rem;
+    font-family: Satoshi;
+}
