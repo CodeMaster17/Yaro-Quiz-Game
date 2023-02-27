@@ -3,21 +3,24 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 .wrapper {
     width: 100vw;
     height: 100vh;
     background-color: rgba(10, 12, 20, 1);
+    /* border: 2px solid yellow; */
 }
 
 .navigation {
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 10vh;
     padding-left: 2%;
+    /* border: 2px solid green; */
 }
 
 .backBtn {
@@ -28,11 +31,12 @@
 
 .scoreContainer {
     display: flex;
-    width: 30%;
+    width: 25%;
     height: 100%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    padding: 0 2% 0 2%;
+    /* padding: 0 2% 0 2%; */
+    /* margin-right: 12%; */
 }
 
 .coins {
@@ -48,11 +52,16 @@
 
 .logoContainer {
     width: 100%;
-    height: 11.5rem;
+    height: 14.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.logoImg {
+    width: 40%;
+    height: 80%;
 }
 
 .logoContainer p {
@@ -75,13 +84,12 @@
 
 .contentContainer {
     width: 100%;
-    height: 60vh;
+    height: 69vh;
 }
 
 .numberContianer {
     width: 100%;
     height: 10%;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,11 +110,11 @@
 .questionContainer {
     width: 100%;
     height: 20%;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 2%;
 }
 
 #question {
@@ -114,60 +122,72 @@
     text-align: center;
     font-size: 1.8rem;
     font-family: Satoshi;
-    margin: 2rem;
+    padding: 4%;
 }
 
 .btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 1rem;
-    margin: 20px 0;
-    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30rem;
+    flex-wrap: wrap;
 }
 
 
-#answer-buttons > div {
-    border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color: white;
-    border-radius: 1rem;
-    padding: 1rem;
-    font-size: 5rem;
-    color: #000;
+#answer-buttons>div {
+    border-radius: 15px;
+    color: white;
     outline: none;
+    background-color: rgba(41, 44, 51, 1);
+    text-align: center;
+    font-family: 'Satoshi';
+    width: 40%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn img{
+
+.btn img {
     width: 5rem;
     height: 3rem;
 }
 
-.btn p{
+.btn p {
     font-size: 2rem;
 }
 
 .btn:hover {
-border-color: black;
+    border-color: black;
 }
 
 .correct {
---hue: var(--hue-correct);
-color: black;
+    --hue: var(--hue-correct);
+    color: black;
 }
 
 .wrong {
---hue: var(--hue-wrong);
+    --hue: var(--hue-wrong);
 }
 
-.start-btn, .next-btn {
-font-size: 1.5rem;
-font-weight: bold;
-padding: 10px 20px;
+.start-btn,
+.next-btn {
+    width: 30%;
+    height: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* padding: 10px 20px; */
+    font-family: 'Satoshi';
 }
 
 .controls {
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .bottomLine {
@@ -181,14 +201,14 @@ align-items: center;
 }
 
 
-.answer{
+.answer {
     color: white;
     font-family: Satoshi;
 }
 
 
 .footer {
-    height: 10vh;
+    height: 2vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -213,6 +233,6 @@ align-items: center;
     font-family: Satoshi;
 }
 
-.hide{
+.hide {
     display: none;
 }

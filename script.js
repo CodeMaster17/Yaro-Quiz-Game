@@ -3,8 +3,8 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-const answers=document.querySelectorAll('.answer')
-const quantity= document.querySelector('.number')
+const answers = document.querySelectorAll('.answer')
+const quantity = document.querySelector('.number')
 const scoreElement = document.querySelector('.score')
 
 let shuffledQuestions, currentQuestionIndex, score, counter;
@@ -16,9 +16,9 @@ nextButton.addEventListener('click', () => {
 })
 
 function startGame() {
-  score=0;
-  counter=0;
-  quantity.innerHTML=`${counter}/10`
+  score = 0;
+  counter = 0;
+  quantity.innerHTML = `${counter}/10`
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
@@ -26,7 +26,7 @@ function startGame() {
   setNextQuestion()
 }
 
-function endGame(){
+function endGame() {
   startButton.innerText = 'Restart';
   questionContainerElement.classList.add('hide');
   startButton.classList.remove('hide');
@@ -35,12 +35,12 @@ function endGame(){
 
 function setNextQuestion() {
   counter++;
-  console.log(`counter:${counter}`);
-  quantity.innerHTML=`${counter}/10`
-  if(counter>10){
+  // console.log(`counter:${counter}`);
+  quantity.innerHTML = `${counter}/10`
+  if (counter > 10) {
     endGame();
   }
-  console.log(score);
+  // console.log(score);
   resetState();
   showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
@@ -49,7 +49,7 @@ function showQuestion(question) {
   questionElement.innerText = question.question
   question.answers.forEach(answer => {
     const option = document.createElement('div')
-    option.innerHTML=`
+    option.innerHTML = `
     <img src="${answer.img}">
     <p>${answer.text}</p>
     `
@@ -59,6 +59,7 @@ function showQuestion(question) {
     }
     option.addEventListener('click', selectAnswer)
     answerButtonsElement.appendChild(option)
+    // answerButtonsElement.classList.add('color')
   })
 }
 
@@ -75,8 +76,19 @@ function selectAnswer(e) {
   const correct = selectedButton.dataset.correct
   if (correct) {
     score++;
+    // selectedButton.classList.add('color');
+    selectedButton.style.backgroundColor = "rgba(68, 181, 147, 1)";
   } else {
-    score--;
+    if (score == 0) {
+      score = 0
+      selectedButton.style.backgroundColor = "rgba(255, 95, 109, 1)";
+    }
+    else {
+
+      selectedButton.style.backgroundColor = "rgba(255, 95, 109, 1)";
+
+      score--;
+    }
   }
   scoreElement.textContent = score; // update score
   setStatusClass(document.body, correct)
@@ -110,91 +122,91 @@ const questions = [
   {
     question: 'What is the recommended percentage of your income that you should save for retirement, according to financial experts?',
     answers: [
-      { text: '5-10%', img:"./img/option.png", correct: true },
-      { text: '4', img:"./img/option.png", correct: false },
-      { text: '6', img:"./img/option.png", correct: false },
-      { text: '22', img:"./img/option.png", correct: false },
+      { text: '5-10%', img: "./img/option.png", correct: true },
+      { text: '4', img: "./img/option.png", correct: false },
+      { text: '6', img: "./img/option.png", correct: false },
+      { text: '22', img: "./img/option.png", correct: false },
     ]
   },
   {
     question: 'What is the term used to describe the process of spreading your investments across different types of assets and sectors to minimize risk?',
     answers: [
-      { text: 'true', img:"./img/option.png", correct: true },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
     ]
   },
   {
     question: 'What is the name of the government scheme that provides tax benefits for investments made in specified mutual funds and other financial instruments?',
     answers: [
-      { text: 'true', img:"./img/option.png", correct: true },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
     ]
   },
   {
     question: 'What is the name of the index that tracks the performance of the top 50 companies listed on the National Stock Exchange of India?',
     answers: [
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'true', img:"./img/option.png", correct: true },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
     ]
   },
   {
     question: 'What is the recommended debt-to-income ratio for individuals, according to financial experts?',
     answers: [
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'true', img:"./img/option.png", correct: true },
-      { text: 'false', img:"./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
+      { text: 'false', img: "./img/option.png", correct: false },
     ]
   },
   {
     question: 'What is the term used to describe the process of borrowing money to invest in the stock market?',
     answers: [
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'true', img:"./img/option.png", correct: true },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
     ]
   },
   {
     question: 'What is the name of the popular online platform that allows individuals to invest in stocks, mutual funds, and other financial instruments?',
     answers: [
-      { text: 'true', img:"./img/option.png", correct: true },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
     ]
   },
   {
     question: 'What is the term used to describe the practice of buying and holding stocks for the long term, regardless of short-term market fluctuations?',
     answers: [
-      { text: 'true', img:"./img/option.png", correct: true },
-      { text: 'fasle', img:"./img/option.png", correct: false },
-      { text: 'fasle', img:"./img/option.png", correct: false },
-      { text: 'fasle', img:"./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
+      { text: 'fasle', img: "./img/option.png", correct: false },
+      { text: 'fasle', img: "./img/option.png", correct: false },
+      { text: 'fasle', img: "./img/option.png", correct: false },
     ]
   },
   {
     question: 'What is the name of the tax levied on the gains made from the sale of stocks or mutual funds?',
     answers: [
-      { text: 'true', img:"./img/option.png", correct: true },
-      { text: 'fasle', img:"./img/option.png", correct: false },
-      { text: 'fasle', img:"./img/option.png", correct: false },
-      { text: 'fasle', img:"./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
+      { text: 'fasle', img: "./img/option.png", correct: false },
+      { text: 'fasle', img: "./img/option.png", correct: false },
+      { text: 'fasle', img: "./img/option.png", correct: false },
     ]
   },
   {
     question: 'What is the name of the index that tracks the performance of the top 30 companies listed on the Bombay Stock Exchange?',
     answers: [
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'false', img:"./img/option.png", correct: false },
-      { text: 'true', img:"./img/option.png", correct: true },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
     ]
   }
 ]
