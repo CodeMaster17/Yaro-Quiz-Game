@@ -11,6 +11,7 @@
       href="https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap"
       rel="stylesheet"
     />
+    <script defer src="./script.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -32,66 +33,34 @@
       </div>
       <div class="contentContainer">
         <div class="numberContianer">
-          <p class="Quantitiy">Question <span class="number">1/12</span></p>
+          <p class="Quantitiy">Question <span class="number">0/10</span></p>
         </div>
-        <div class="questionContainer">
-          <p class="question">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-            necessitatibus!
-          </p>
-        </div>
-        <div class="optionContainer">
-          <div class="answerContainer">
-            <div class="topAnswer">
-              <div class="imgOptContainer">
-                <img src="./img/option.png" alt="" class="optImg" />
-              </div>
-              <p class="imgName">Paytm</p>
+        <div id="question-container" class="hide">
+          <div id="question">Question</div>
+          <div id="answer-buttons" class="btn-grid">
+            <div class="btn">
+              <img src="./img/option.png" alt="">
+              <p class="answer">Answer 1</p>
             </div>
-
-            <div class="bottomAnswer">
-              <p class="rate">545</p>
-              <p class="bottomLine">Current Stock Price</p>
+            <div class="btn">
+              <img src="./img/option.png" alt="">
+              <p class="answer">Answer 2</p>
             </div>
-          </div>
-          <div class="answerContainer">
-            <div class="topAnswer">
-              <div class="imgOptContainer">
-                <img src="./img/option.png" alt="" class="optImg" />
-              </div>
-              <p class="imgName">Paytm</p>
+            <div class="btn">
+              <img src="./img/option.png" alt="">
+              <p class="answer">Answer 3</p>
             </div>
-            <div class="bottomAnswer">
-              <p class="rate">545</p>
-              <p class="bottomLine">Current Stock Price</p>
-            </div>
-          </div>
-          <div class="answerContainer">
-            <div class="topAnswer">
-              <div class="imgOptContainer">
-                <img src="./img/option.png" alt="" class="optImg" />
-              </div>
-              <p class="imgName">Paytm</p>
-            </div>
-
-            <div class="bottomAnswer">
-              <p class="rate">545</p>
-              <p class="bottomLine">Current Stock Price</p>
-            </div>
-          </div>
-          <div class="answerContainer">
-            <div class="topAnswer">
-              <div class="imgOptContainer">
-                <img src="./img/option.png" alt="" class="optImg" />
-              </div>
-              <p class="imgName">Paytm</p>
-            </div>
-            <div class="bottomAnswer">
-              <p class="rate">545</p>
-              <p class="bottomLine">Current Stock Price</p>
+            <div class="btn">
+              <img src="./img/option.png" alt="">
+              <p class="answer">Answer 4</p>
             </div>
           </div>
         </div>
+        <div class="controls">
+          <button id="start-btn" class="start-btn btn">Start</button>
+          <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+      </div>
         <div class="footer">
           <p class="instruction1">
             Tap on the <span class="spanCorrect">Correct Option</span>
