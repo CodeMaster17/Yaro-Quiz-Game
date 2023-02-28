@@ -1,5 +1,5 @@
 const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
+// const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
@@ -13,11 +13,16 @@ const content = document.querySelector('.contentContainer')
 
 let shuffledQuestions, currentQuestionIndex, score, correctCounter, wrongCounter, counter;
 
+
 startButton.addEventListener('click', startGame);
-nextButton.addEventListener('click', () => {
+// nextButton.addEventListener('click', () => {
+//   currentQuestionIndex++
+//   setNextQuestion()
+// })
+function nextButtonReplacement() {
   currentQuestionIndex++
   setNextQuestion()
-})
+}
 
 function startGame() {
   score = 0;
@@ -65,11 +70,7 @@ function setNextQuestion() {
   // console.log(counter);
 
   quantity.innerHTML = `${counter}/10`;
-<<<<<<< HEAD
   if (counter-1===10) {
-=======
-  if (counter - 1 === 4) {
->>>>>>> b71bc20512f48c63cb4e0ef8c61f55375fce56fb
     endGame();
   }
   resetState();
@@ -89,7 +90,7 @@ function showQuestion(question) {
     if (answer.correct) {
       option.dataset.correct = answer.correct
     }
-    console.log(option)
+    //console.log(option)
     option.addEventListener('click', selectAnswer)
     answerButtonsElement.appendChild(option)
     // answerButtonsElement.classList.add('color')
@@ -98,7 +99,7 @@ function showQuestion(question) {
 
 function resetState() {
   clearStatusClass(document.body)
-  nextButton.classList.add('hide')
+  // nextButton.classList.add('hide')
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild)
   }
@@ -106,39 +107,37 @@ function resetState() {
 
 function selectAnswer(e) {
   const id = e.target.id;
-  console.log(e.target)
+  // console.log(e.target)
   const selectedButton = e.target
   const answerSelect = e;
   const correct = selectedButton.dataset.correct
-  // console.log(e)
   if (correct) {
     score++;
     correctCounter++;
     selectedButton.style.backgroundColor = "rgba(68, 181, 147, 1)";
-    // selectedButton.classList.add('color');
-
-
   } else {
     if (score == 0) {
       score = 0
       selectedButton.style.backgroundColor = "rgba(255, 95, 109, 1)";
-
-
     }
     else {
       selectedButton.style.backgroundColor = "rgba(255, 95, 109, 1)";
-
       score--;
       wrongCounter++;
     }
   }
   scoreElement.textContent = score; // update score
+  setTimeout(() => {
+   nextButtonReplacement();
+  }, 1000);
   setStatusClass(document.body, correct)
   Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
   })
+
+
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove('hide')
+    // nextButton.classList.remove('hide')
   } else {
     startButton.innerText = 'Restart'
     startButton.classList.remove('hide')
@@ -149,9 +148,9 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
-    element.classList.add('correct')
+    // element.classList.add('correct')
   } else {
-    element.classList.add('wrong')
+    // element.classList.add('wrong')
   }
 }
 
