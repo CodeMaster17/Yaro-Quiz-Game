@@ -83,7 +83,7 @@ function showQuestion(question) {
   question.answers.forEach(answer => {
     const option = document.createElement('div')
     option.innerHTML = `
-    <img src="${answer.img}">
+    <img src="${answer.img} style="pointer-events:none;">
     <p style="pointer-events:none;">${answer.text}</p>
     `
     option.classList.add('btn')
