@@ -233,6 +233,66 @@
     font-family: Satoshi;
 }
 
+.endCard{
+    color: #fff;
+    width: 80%;
+    height: 60%;
+    background-color: #000;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .headline{
+    font-size: 2rem;
+    font-family: satoshi;
+    font-weight: bolder;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .scoreLine{
+    font-size: 1.5rem;
+    font-family: satoshi;
+    font-weight: bolder;
+    text-align: center;
+    margin: 2rem;
+  }
+  .scoreContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+  .correctContainer,.wrongContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1ECB98;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 1rem;
+    height: 8rem;
+  }
+  .wrongContainer{
+    background-color: #FF5F6D;
+  }
+  .headliner{
+    font-size: 1.5rem;
+    font-family: satoshi;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .correct,.wrong{
+    font-size: 2rem;
+    font-family: satoshi;
+    font-weight: bolder;
+    text-align: center;
+  }
+
 .hide {
     display: none;
 }
