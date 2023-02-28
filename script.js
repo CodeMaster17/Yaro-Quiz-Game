@@ -65,7 +65,7 @@ function setNextQuestion() {
   console.log(counter);
 
   quantity.innerHTML = `${counter}/10`;
-  if (counter-1===4) {
+  if (counter-1===10) {
     endGame();
   }
   resetState();
@@ -236,5 +236,104 @@ const questions = [
       { text: 'false', img: "./img/option.png", correct: false },
       { text: 'true', img: "./img/option.png", correct: true },
     ]
-  }
+  },
+  {
+    question: 'Which of the following is a type of mutual fund that invests primarily in stocks of companies that are expected to grow rapidly in the near future?',
+    answers: [
+      { text: 'Debt funds', img: "./img/option.png", correct: false },
+      { text: 'Equity funds', img: "./img/option.png", correct: true },
+      { text: 'Hybrid funds', img: "./img/option.png", correct: false },
+      { text: 'Index funds', img: "./img/option.png", correct: false },
+    ]
+  },
+  {
+    question: 'What is the maximum amount of tax deduction that can be claimed under Section 80C of the Income Tax Act?',
+    answers: [
+      { text: 'Rs 50,000', img: "./img/option.png", correct: false },
+      { text: 'Rs 1,00,000', img: "./img/option.png", correct: false },
+      { text: 'Rs 1,50,000', img: "./img/option.png", correct: true },
+      { text: 'Rs 2,00,000', img: "./img/option.png", correct: false },
+    ]
+  },
+  {
+    question: "Which of the following is a measure of a company's ability to pay off its short-term liabilities using its current assets?",
+    answers: [
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'false', img: "./img/option.png", correct: false },
+      { text: 'true', img: "./img/option.png", correct: true },
+    ]
+  },
+  {
+    question: 'Which of the following stock market indices represents the performance of the top 30 companies listed on the Bombay Stock Exchange (BSE)?',
+    answers: [
+      { text: 'current ratio', img: "./img/option.png", correct: true },
+      { text: 'Debt-to-equity ratio', img: "./img/option.png", correct: false },
+      { text: 'Price-to-earning ratio', img: "./img/option.png", correct: false },
+      { text: 'Return on ratio', img: "./img/option.png", correct: false },
+    ]
+  },
+  {
+    question: 'What is the tax rate for long-term capital gains on equity shares and equity mutual funds in India?',
+    answers: [
+      { text: 'Nifty 50', img: "./img/option.png", correct: false },
+      { text: 'Sensex 30', img: "./img/option.png", correct: true },
+      { text: 'BSE 100', img: "./img/option.png", correct: false },
+      { text: 'Nifty Bank', img: "./img/option.png", correct: false },
+    ]
+  },
+  {
+    question: 'Which of the following is a type of life insurance policy that provides coverage for a specific period of time?',
+    answers: [
+      { text: '5%', img: "./img/option.png", correct: false },
+      { text: '10%', img: "./img/option.png", correct: false },
+      { text: '15%', img: "./img/option.png", correct: false },
+      { text: '20%', img: "./img/option.png", correct: true },
+    ]
+  },
+  {
+    question: 'Which of the following is a type of investment that is made in a company before it goes public?',
+    answers: [
+      { text: 'Endowment policy', img: "./img/option.png", correct: false },
+      { text: 'Money-Back policy', img: "./img/option.png", correct: false },
+      { text: 'Whole life policy', img: "./img/option.png", correct: false },
+      { text: 'Term life policy', img: "./img/option.png", correct: true },
+    ]
+  },
+  {
+    question: 'Which of the following is a type of mutual fund that invests in fixed-income securities such as bonds, debentures, and government securities?',
+    answers: [
+      { text: 'IPO', img: "./img/option.png", correct: false },
+      { text: 'FPO', img: "./img/option.png", correct: false },
+      { text: 'Angel Investment', img: "./img/option.png", correct: false },
+      { text: 'Venture capital Investment', img: "./img/option.png", correct: true },
+    ]
+  },
+  {
+    question: 'Which of the following is a measure of the risk associated with a stock or a mutual fund?',
+    answers: [
+      { text: 'Equity funds', img: "./img/option.png", correct: false },
+      { text: 'Debt funds', img: "./img/option.png", correct: true },
+      { text: 'Hybrid funds', img: "./img/option.png", correct: false },
+      { text: 'Index funds', img: "./img/option.png", correct: false },
+    ]
+  },
+  {
+    question: 'Which of the following is a type of stock that pays a fixed dividend to its shareholders?',
+    answers: [
+      { text: 'Alpha', img: "./img/option.png", correct: false },
+      { text: 'Beta', img: "./img/option.png", correct: false },
+      { text: 'Standard deviation', img: "./img/option.png", correct: false },
+      { text: 'Sharpe Ratio', img: "./img/option.png", correct: true },
+    ]
+  },
+  {
+    question: 'What is the name of the index that tracks the performance of the top 30 companies listed on the Bombay Stock Exchange?',
+    answers: [
+      { text: 'Growth stock', img: "./img/option.png", correct: false },
+      { text: 'Value stock', img: "./img/option.png", correct: false },
+      { text: 'Income stock', img: "./img/option.png", correct: true },
+      { text: 'Blue-chip stock', img: "./img/option.png", correct: false },
+    ]
+  },
 ]
