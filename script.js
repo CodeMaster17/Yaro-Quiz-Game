@@ -43,7 +43,7 @@ function endGame() {
     ` 
   <h1 class="headline">Your Performance</h1>
   <p class="scoreLine">You attempted <span class="scoreCard">${correctCounter}</span> Question out of <b>10</b></p>
-  div class="scoreContainer">
+  <div class="scoreContainer">
     <div class="correctContainer">
       <p class="headliner">Correct</p>
       <span class="correct">${correctCounter}</span>
