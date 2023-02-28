@@ -10,7 +10,7 @@ const ScoreCard = document.querySelector('.scoreCard')
 const Correct = document.querySelector('.correct')
 const Wrong = document.querySelector('.wrong')
 const content = document.querySelector('.contentContainer')
-
+const wrapper = document.getElementById("wrapper")
 let shuffledQuestions, currentQuestionIndex, score, correctCounter, wrongCounter, counter;
 
 
@@ -38,20 +38,39 @@ function startGame() {
 }
 
 function endGame() {
+  content.style.display = "none"
+  wrapper.style.display = "none"
   const endCard = document.createElement('div');
   endCard.innerHTML =
     ` 
+    
+    <div class="wrapper" >
+     
+      <div class="logoContainer">
+        <img src="./img/logo.png" alt="" class="logoImg" />
+        <p>Check your stick quotient</p>
+      </div>
+      <div class="lineContainer">
+        <img src="./img/line.png" alt="" class="line" />
+ 
+        </div>
+
+        <br/>
+    <br/>
+  <div class="scoreContainer">
   <h1 class="headline">Your Performance</h1>
   <p class="scoreLine">You attempted <span class="scoreCard">${correctCounter}</span> Question out of <b>10</b></p>
-  <div class="scoreContainer">
-    <div class="correctContainer">
-      <p class="headliner">Correct</p>
-      <span class="correct">${correctCounter}</span>
-    </div>
-    <div class="wrongContainer">
-      <p class="headliner">Wrong</p>
-      <span class="wrong">${wrongCounter}</span>
-    </div>
+  <div className="scoreBoard">
+  <div class="correctContainer">
+  <p class="headliner">Correct</p>
+  <span class="correct">${correctCounter}</span>
+  </div>
+  <div class="wrongContainer">
+  <p class="headliner">Wrong</p>
+  <span class="wrong">${wrongCounter}</span>
+  </div>
+  </div>
+  </div>
   </div>
 `
   document.body.appendChild(endCard);
@@ -66,7 +85,7 @@ function endGame() {
 function setNextQuestion() {
   counter++;
   quantity.innerHTML = `${counter}/10`;
-  if (counter-1===10) {
+  if (counter - 1 === 10) {
     endGame();
   }
   resetState();
@@ -130,7 +149,7 @@ function selectAnswer(e) {
   }
   scoreElement.textContent = score; // update score
   setTimeout(() => {
-   nextButtonReplacement();
+    nextButtonReplacement();
   }, 1000);
   setStatusClass(document.body, correct)
   Array.from(answerButtonsElement.children).forEach(button => {
