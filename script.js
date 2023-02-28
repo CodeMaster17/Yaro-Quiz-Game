@@ -6,8 +6,12 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 const answers = document.querySelectorAll('.answer')
 const quantity = document.querySelector('.number')
 const scoreElement = document.querySelector('.score')
+const ScoreCard = document.querySelector('.scoreCard')
+const Correct = document.querySelector('.correct')
+const Wrong = document.querySelector('.wrong')
+const content = document.querySelector('.contentContainer')
 
-let shuffledQuestions, currentQuestionIndex, score, counter;
+let shuffledQuestions, currentQuestionIndex, score, correctCounter, wrongCounter, counter;
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
@@ -18,6 +22,8 @@ nextButton.addEventListener('click', () => {
 function startGame() {
   score = 0;
   counter = 0;
+  correctCounter=0;
+  wrongCounter=0;
   quantity.innerHTML = `${counter}/10`
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -27,6 +33,25 @@ function startGame() {
 }
 
 function endGame() {
+  const endCard= document.createElement('div');
+  endCard.innerHTML=
+  ` 
+  <h1 class="headline">Your Performance</h1>
+  <p class="scoreLine">You attempted <span class="scoreCard">${correctCounter}</span> Question out of <b>10</b></p>
+  div class="scoreContainer">
+    <div class="correctContainer">
+      <p class="headliner">Correct</p>
+      <span class="correct">${correctCounter}</span>
+    </div>
+    <div class="wrongContainer">
+      <p class="headliner">Wrong</p>
+      <span class="wrong">${wrongCounter}</span>
+    </div>
+  </div>
+` 
+  document.body.appendChild(endCard);
+  content.classList.add('hide');
+  // questionContainerElement.classList.add('hide')
   startButton.innerText = 'Restart';
   questionContainerElement.classList.add('hide');
   startButton.classList.remove('hide');
@@ -34,16 +59,19 @@ function endGame() {
 }
 
 function setNextQuestion() {
+  // console.log(currentQuestionIndex);
+  // console.log(shuffledQuestions.length);
   counter++;
-  // console.log(`counter:${counter}`);
-  quantity.innerHTML = `${counter}/10`
-  if (counter > 10) {
+  console.log(counter);
+
+  quantity.innerHTML = `${counter}/10`;
+  if (counter-1===4) {
     endGame();
   }
-  // console.log(score);
   resetState();
   showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
+
 
 function showQuestion(question) {
   questionElement.innerText = question.question
@@ -76,6 +104,7 @@ function selectAnswer(e) {
   const correct = selectedButton.dataset.correct
   if (correct) {
     score++;
+    correctCounter++;
     // selectedButton.classList.add('color');
     selectedButton.style.backgroundColor = "rgba(68, 181, 147, 1)";
   } else {
@@ -84,10 +113,9 @@ function selectAnswer(e) {
       selectedButton.style.backgroundColor = "rgba(255, 95, 109, 1)";
     }
     else {
-
       selectedButton.style.backgroundColor = "rgba(255, 95, 109, 1)";
-
       score--;
+      wrongCounter++;
     }
   }
   scoreElement.textContent = score; // update score
