@@ -10,92 +10,33 @@
       href="https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap"
       rel="stylesheet"
     />
-    <style>
-      *,html,body{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      .endCard{
-        color: #fff;
-        width: 80%;
-        height: 60%;
-        background-color: #000;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-      }
-      .headline{
-        font-size: 2rem;
-        font-family: satoshi;
-        font-weight: bolder;
-        text-align: center;
-        margin: 1rem 0;
-      }
-      .scoreLine{
-        font-size: 1.5rem;
-        font-family: satoshi;
-        font-weight: bolder;
-        text-align: center;
-        margin: 2rem;
-      }
-      .scoreContainer{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1rem 2rem;
-        gap: 1rem;
-      }
-      .correctContainer,.wrongContainer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: #1ECB98;
-        width: 50%;
-        padding: 1rem;
-        border-radius: 1rem;
-        height: 8rem;
-      }
-      .wrongContainer{
-        background-color: #FF5F6D;
-      }
-      .headliner{
-        font-size: 1.5rem;
-        font-family: satoshi;
-        font-weight: bolder;
-        text-align: center;
-      }
-      .correct,.wrong{
-        font-size: 2rem;
-        font-family: satoshi;
-        font-weight: bolder;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="./score.css" />
     <script defer src="./script.js"></script>
   </head>
   <body>
-    <div class="endCard">
-      <h1 class="headline">Your Performance</h1>
-      <p class="scoreLine">You attempted <span class="scoreCard">0</span> Question out of <b>10</b></p>
-      <div class="scoreContainer">
-        <div class="correctContainer">
-          <p class="headliner">Correct</p>
-          <span class="correct">0</span>
-        </div>
-        <div class="wrongContainer">
-          <p class="headliner">Wrong</p>
-          <span class="wrong">0</span>
+    <div class="wrapper">
+      <div class="resultHead">
+        <img src="./img/resultHead.png" alt="" class="finalHeadImg" />
+      </div>
+      <div class="endCard">
+        <h1 class="headline">Your Performance</h1>
+        <br />
+        <br />
+
+        <p class="scoreLine">
+          You attempted <span class="scoreCard">0</span> <br />
+          Question out of
+          <b>10</b>
+        </p>
+        <div class="scoreContainer">
+          <div class="correctContainer">
+            <p class="headliner">Correct</p>
+            <span class="correct">0</span>
+          </div>
+          <div class="wrongContainer">
+            <p class="headliner">Wrong</p>
+            <span class="wrong">0</span>
+          </div>
         </div>
       </div>
     </div>

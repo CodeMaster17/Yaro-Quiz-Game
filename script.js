@@ -22,8 +22,8 @@ nextButton.addEventListener('click', () => {
 function startGame() {
   score = 0;
   counter = 0;
-  correctCounter=0;
-  wrongCounter=0;
+  correctCounter = 0;
+  wrongCounter = 0;
   quantity.innerHTML = `${counter}/10`
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -33,9 +33,9 @@ function startGame() {
 }
 
 function endGame() {
-  const endCard= document.createElement('div');
-  endCard.innerHTML=
-  ` 
+  const endCard = document.createElement('div');
+  endCard.innerHTML =
+    ` 
   <h1 class="headline">Your Performance</h1>
   <p class="scoreLine">You attempted <span class="scoreCard">${correctCounter}</span> Question out of <b>10</b></p>
   div class="scoreContainer">
@@ -48,7 +48,7 @@ function endGame() {
       <span class="wrong">${wrongCounter}</span>
     </div>
   </div>
-` 
+`
   document.body.appendChild(endCard);
   content.classList.add('hide');
   // questionContainerElement.classList.add('hide')
@@ -62,10 +62,14 @@ function setNextQuestion() {
   // console.log(currentQuestionIndex);
   // console.log(shuffledQuestions.length);
   counter++;
-  console.log(counter);
+  // console.log(counter);
 
   quantity.innerHTML = `${counter}/10`;
+<<<<<<< HEAD
   if (counter-1===10) {
+=======
+  if (counter - 1 === 4) {
+>>>>>>> b71bc20512f48c63cb4e0ef8c61f55375fce56fb
     endGame();
   }
   resetState();
@@ -85,6 +89,7 @@ function showQuestion(question) {
     if (answer.correct) {
       option.dataset.correct = answer.correct
     }
+    console.log(option)
     option.addEventListener('click', selectAnswer)
     answerButtonsElement.appendChild(option)
     // answerButtonsElement.classList.add('color')
@@ -100,20 +105,29 @@ function resetState() {
 }
 
 function selectAnswer(e) {
+  const id = e.target.id;
+  console.log(e.target)
   const selectedButton = e.target
+  const answerSelect = e;
   const correct = selectedButton.dataset.correct
+  // console.log(e)
   if (correct) {
     score++;
     correctCounter++;
-    // selectedButton.classList.add('color');
     selectedButton.style.backgroundColor = "rgba(68, 181, 147, 1)";
+    // selectedButton.classList.add('color');
+
+
   } else {
     if (score == 0) {
       score = 0
       selectedButton.style.backgroundColor = "rgba(255, 95, 109, 1)";
+
+
     }
     else {
       selectedButton.style.backgroundColor = "rgba(255, 95, 109, 1)";
+
       score--;
       wrongCounter++;
     }
