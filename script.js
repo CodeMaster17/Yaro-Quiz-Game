@@ -64,11 +64,7 @@ function endGame() {
 }
 
 function setNextQuestion() {
-  // console.log(currentQuestionIndex);
-  // console.log(shuffledQuestions.length);
   counter++;
-  // console.log(counter);
-
   quantity.innerHTML = `${counter}/10`;
   if (counter-1===10) {
     endGame();
@@ -105,9 +101,9 @@ function resetState() {
   }
 }
 
+
 function selectAnswer(e) {
   const id = e.target.id;
-  // console.log(e.target)
   const selectedButton = e.target
   const answerSelect = e;
   const correct = selectedButton.dataset.correct
@@ -125,6 +121,12 @@ function selectAnswer(e) {
       score--;
       wrongCounter++;
     }
+    // Get the correct answer button
+    const correctButton = Array.from(answerButtonsElement.children).find(button => button.dataset.correct);
+    // Add green background color to the correct answer button
+    if (correctButton) {
+      correctButton.style.backgroundColor = "rgba(68, 181, 147, 1)";
+    }
   }
   scoreElement.textContent = score; // update score
   setTimeout(() => {
@@ -135,7 +137,6 @@ function selectAnswer(e) {
     setStatusClass(button, button.dataset.correct)
   })
 
-
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     // nextButton.classList.remove('hide')
   } else {
@@ -143,6 +144,7 @@ function selectAnswer(e) {
     startButton.classList.remove('hide')
   }
 }
+
 
 
 function setStatusClass(element, correct) {
