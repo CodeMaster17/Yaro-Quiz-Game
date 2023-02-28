@@ -40,11 +40,12 @@ function startGame() {
 function endGame() {
   content.style.display = "none"
   wrapper.style.display = "none"
+  const correctPerc = (correctCounter / 10) * 100;
   const endCard = document.createElement('div');
   endCard.innerHTML =
     ` 
     
-    <div class="wrapper" >
+    <div class="wrapperNew" >
      
       <div class="logoContainer">
         <img src="./img/logo.png" alt="" class="logoImg" />
@@ -57,10 +58,15 @@ function endGame() {
 
         <br/>
     <br/>
+
+
+      
   <div class="scoreContainer">
-  <h1 class="headline">Your Performance</h1>
-  <p class="scoreLine">You attempted <span class="scoreCard">${correctCounter}</span> Question out of <b>10</b></p>
-  <div className="scoreBoard">
+
+<p class="scoreLine"> <span class="scoreCard"> You Scored <span id="result">
+ ${correctPerc} %</span></span> <br/> Keep it Up!</p>
+
+  <div class="displayBoard">
   <div class="correctContainer">
   <p class="headliner">Correct</p>
   <span class="correct">${correctCounter}</span>
@@ -71,7 +77,9 @@ function endGame() {
   </div>
   </div>
   </div>
+
   </div>
+  
 `
   document.body.appendChild(endCard);
   content.classList.add('hide');
@@ -137,7 +145,7 @@ function selectAnswer(e) {
     }
     else {
       selectedButton.style.backgroundColor = "rgba(255, 95, 109, 1)";
-      score--;
+      // score--;
       wrongCounter++;
     }
     // Get the correct answer button
