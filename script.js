@@ -84,7 +84,7 @@ function showQuestion(question) {
     const option = document.createElement('div')
     option.innerHTML = `
     <img src="${answer.img}">
-    <p>${answer.text}</p>
+    <p style="pointer-events:none;">${answer.text}</p>
     `
     option.classList.add('btn')
     if (answer.correct) {
@@ -148,9 +148,9 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
-    // element.classList.add('correct')
+    element.classList.add('correct')
   } else {
-    // element.classList.add('wrong')
+    element.classList.add('wrong')
   }
 }
 
