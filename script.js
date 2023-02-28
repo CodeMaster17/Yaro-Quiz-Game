@@ -38,11 +38,12 @@ function startGame() {
 }
 
 function endGame() {
+  const correctPerc= (correctCounter/10)*100;
   const endCard = document.createElement('div');
   endCard.innerHTML =
     ` 
   <h1 class="headline">Your Performance</h1>
-  <p class="scoreLine">You attempted <span class="scoreCard">${correctCounter}</span> Question out of <b>10</b></p>
+  <p class="scoreLine">You Scored <span class="scoreCard">${correctPerc}</span>% keep it Up!</p>
   <div class="scoreContainer">
     <div class="correctContainer">
       <p class="headliner">Correct</p>
